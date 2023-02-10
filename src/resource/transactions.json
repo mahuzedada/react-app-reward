@@ -1,0 +1,47 @@
+[
+  {
+    "customerId": 1,
+    "date": "2/10/2023",
+    "amount": 423
+  },
+  {
+    "customerId": 1,
+    "date": "1/10/2023",
+    "amount": 75
+  },
+  {
+    "customerId": 1,
+    "date": "12/10/2022",
+    "amount": 150
+  },
+  {
+    "customerId": 2,
+    "date": "2/10/2023",
+    "amount": 423
+  },
+  {
+    "customerId": 2,
+    "date": "1/10/2023",
+    "amount": 75
+  },
+  {
+    "customerId": 2,
+    "date": "12/10/2022",
+    "amount": 150
+  },
+  {
+    "customerId": 3,
+    "date": "1/20/2023",
+    "amount": 543
+  },
+  {
+    "customerId": 3,
+    "date": "1/10/2023",
+    "amount": 80
+  },
+  {
+    "customerId": 3,
+    "date": "12/10/2022",
+    "amount": 125
+  }
+]
