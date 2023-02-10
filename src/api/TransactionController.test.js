@@ -1,4 +1,4 @@
-import * as server from '../resource/server';
+import * as server from '../../resource/server';
 import TransactionController from "./TransactionController";
 
 describe('getAll', () => {

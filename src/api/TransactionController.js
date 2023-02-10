@@ -1,4 +1,4 @@
-import {getTransactionByCustomer, getTransactions} from "../resource/server";
+import {getTransactionByCustomer, getTransactions} from "../../resource/server";
 export default class TransactionController {
   static async getAll() {
     try {

@@ -1,4 +1,4 @@
-import {getCustomers} from "../resource/server";
+import {getCustomers} from "../../resource/server";
 export default class CustomerController {
   static async getAll() {
     try {

@@ -1,4 +1,4 @@
-import * as server from '../resource/server';
+import * as server from '../../resource/server';
 import CustomerController from "./CustomerController";
 
 test('should handle getAll success', async () => {
