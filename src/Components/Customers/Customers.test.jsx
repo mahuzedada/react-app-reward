@@ -36,3 +36,16 @@ test('should navigate to customer transactions page', async () => {
   expect(mockNavigate).toHaveBeenCalledTimes(1);
   expect(mockNavigate).toHaveBeenCalledWith('/customers/idx/transactions');
 });
+test('should navigate to all transactions page', async () => {
+  CustomerController.getAll = jest
+    .fn()
+    .mockResolvedValue([]);
+  render(
+    <BrowserRouter>
+      <Customers />
+    </BrowserRouter>
+  );
+  fireEvent.click(await screen.findByText('View all transactions'));
+  expect(mockNavigate).toHaveBeenCalledTimes(1);
+  expect(mockNavigate).toHaveBeenCalledWith('/transactions');
+});

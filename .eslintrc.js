@@ -27,4 +27,5 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
   },
+  ignorePatterns: ['src/index.css', 'tailwind.config.js', 'public/*'],
 };

@@ -16,8 +16,8 @@ export default function AllTransactions() {
 
   return (
     <>
-      <h3>Transactions</h3>
-      <button onClick={goToCustomers}>View customers</button>
+      <div onClick={goToCustomers} className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">View customers</div>
+      <div className="text-3xl font-bold mb-3">All transactions</div>
       <TransactionsTable transactions={transactions} />
     </>
   );

@@ -19,25 +19,21 @@ export default function Customers() {
 
   return (
     <>
-      <h3>Customers</h3>
-      <button onClick={goAllTransactions}>View all transactions</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Customer Name</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div onClick={goAllTransactions} className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">View all transactions</div>
+      <div className="text-3xl font-bold mb-3">Customers</div>
+      <div className="flex justify-center">
+        <ul className="bg-white rounded-lg border border-gray-200 w-full text-gray-900">
           {customers.map((customer) => (
-            <tr
+            <li
               key={Math.random()}
               onClick={() => goToCustomerTransactions(customer.id)}
+              className="px-6 py-2 border-b border-gray-200 w-full cursor-pointer hover:bg-gray-100"
             >
-              <td>{customer.name}</td>
-            </tr>
+              {customer.name}
+            </li>
           ))}
-        </tbody>
-      </table>
+        </ul>
+      </div>
     </>
   );
 }

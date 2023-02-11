@@ -29,9 +29,11 @@ export default function CustomerTransactions() {
 
   return (
     <>
-      <button onClick={goToCustomers}>Back to all customers</button>
-      <h2>Transactions for {customer.name}</h2>
-      <h3>Total rewards {computeRewards(transactions)} points</h3>
+      <div onClick={goToCustomers} className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">View all customers</div>
+      <div className="flex items-center justify-between m-b-4">
+        <div className="text-3xl font-bold mb-3">Transactions for {customer.name}</div>
+        <div className="">Total rewards: <span className="text-4xl">{computeRewards(transactions)}</span></div>
+      </div>
       <TransactionsTable transactions={transactions} />
     </>
   );
