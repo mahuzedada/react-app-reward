@@ -14,16 +14,37 @@ export async function getCustomerById(id) {
     }, 123)
   );
 }
+function processTransactions(list) {
+  return list
+    .sort((a, b) => {
+      const aDate = new Date(a.date);
+      const bDate = new Date(b.date);
+      if (aDate < bDate) {
+        return 1;
+      }
+      if (aDate > bDate) {
+        return -1;
+      }
+      return 0;
+    });
+}
 export async function getTransactions() {
   return new Promise((resolve) =>
-    setTimeout(() => resolve({ status: 200, data: transactions }), 368)
+    setTimeout(
+      () =>
+        resolve({
+          status: 200,
+          data: processTransactions(transactions),
+        }),
+      368
+    )
   );
 }
 export async function getTransactionsByCustomer(id) {
   return new Promise((resolve) =>
     setTimeout(() => {
-      const transaction = transactions.filter(
-        (transaction) => transaction.customerId === id
+      const transaction = processTransactions(
+        transactions.filter((transaction) => transaction.customerId === id)
       );
       resolve({ status: 200, data: transaction });
     }, 134)
