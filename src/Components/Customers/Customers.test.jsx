@@ -37,9 +37,7 @@ test('should navigate to customer transactions page', async () => {
   expect(mockNavigate).toHaveBeenCalledWith('/customers/idx/transactions');
 });
 test('should navigate to all transactions page', async () => {
-  CustomerController.getAll = jest
-    .fn()
-    .mockResolvedValue([]);
+  CustomerController.getAll = jest.fn().mockResolvedValue([]);
   render(
     <BrowserRouter>
       <Customers />

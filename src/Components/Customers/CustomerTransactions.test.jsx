@@ -1,8 +1,8 @@
-import {fireEvent, render, screen} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import CustomerTransactions from './CustomerTransactions';
 import CustomerController from '../../api/CustomerController';
 import TransactionController from '../../api/TransactionController';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockCustomerId = 1;
 const mockNavigate = jest.fn();
@@ -41,7 +41,9 @@ test('should render customer name, total rewards and the list of transactions', 
   );
 });
 test('should navigate to customers page', async () => {
-  CustomerController.getById = jest.fn().mockResolvedValue({ name: 'anything' });
+  CustomerController.getById = jest
+    .fn()
+    .mockResolvedValue({ name: 'anything' });
   TransactionController.getByCustomer = jest.fn().mockResolvedValue([]);
   render(
     <BrowserRouter>

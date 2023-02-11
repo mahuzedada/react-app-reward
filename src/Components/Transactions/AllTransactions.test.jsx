@@ -1,7 +1,7 @@
-import {fireEvent, render, screen} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import AllTransactions from './AllTransactions';
 import TransactionController from '../../api/TransactionController';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => {

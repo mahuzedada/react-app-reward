@@ -19,7 +19,12 @@ export default function Customers() {
 
   return (
     <>
-      <div onClick={goAllTransactions} className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">View all transactions</div>
+      <div
+        onClick={goAllTransactions}
+        className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4"
+      >
+        View all transactions
+      </div>
       <div className="text-3xl font-bold mb-3">Customers</div>
       <div className="flex justify-center">
         <ul className="bg-white rounded-lg border border-gray-200 w-full text-gray-900">

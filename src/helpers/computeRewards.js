@@ -1,9 +1,10 @@
 function computeSingleReward(transaction) {
-  if (transaction.amount >= 100) {
-    return 50 + (transaction.amount - 100) * 2;
+  const { amount } = transaction;
+  if (amount >= 100) {
+    return 50 + (amount - 100) * 2;
   }
-  if (transaction.amount >= 50) {
-    return transaction.amount - 50;
+  if (amount >= 50) {
+    return amount - 50;
   }
   return 0;
 }
