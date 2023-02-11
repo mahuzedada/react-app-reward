@@ -1,11 +1,11 @@
-import {useEffect, useState} from "react";
-import TransactionController from "../../api/TransactionController";
-import TransactionsTable from "./TransactionsTable";
+import { useEffect, useState } from 'react';
+import TransactionController from '../../api/TransactionController';
+import TransactionsTable from './TransactionsTable';
 
-export default function  AllTransactions() {
+export default function AllTransactions() {
   const [transactions, setTransactions] = useState([]);
   useEffect(() => {
-    TransactionController.getAll().then(setTransactions)
+    TransactionController.getAll().then(setTransactions);
   }, []);
   return (
     <>

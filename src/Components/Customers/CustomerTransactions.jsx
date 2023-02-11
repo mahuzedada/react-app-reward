@@ -1,9 +1,9 @@
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import TransactionController from "../../api/TransactionController";
-import CustomerController from "../../api/CustomerController";
-import TransactionsTable from "../Transactions/TransactionsTable";
-import computeRewards from "../../helpers/computeRewards";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import TransactionController from '../../api/TransactionController';
+import CustomerController from '../../api/CustomerController';
+import TransactionsTable from '../Transactions/TransactionsTable';
+import computeRewards from '../../helpers/computeRewards';
 
 export default function CustomerTransactions() {
   const { customerId } = useParams();
@@ -13,7 +13,7 @@ export default function CustomerTransactions() {
   useEffect(() => {
     const id = Number(customerId);
     if (id) {
-      CustomerController.getById(id).then(setCustomer)
+      CustomerController.getById(id).then(setCustomer);
       TransactionController.getByCustomer(id).then(setTransactions);
     }
   }, [customerId]);

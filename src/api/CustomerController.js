@@ -1,4 +1,4 @@
-import {getCustomerById, getCustomers} from "../resource/server";
+import { getCustomerById, getCustomers } from '../resource/server';
 export default class CustomerController {
   static async getAll() {
     try {
