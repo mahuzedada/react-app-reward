@@ -15,17 +15,26 @@ export async function getCustomerById(id) {
   );
 }
 function processTransactions(list) {
-  return list.sort((a, b) => {
-    const aDate = new Date(a.date);
-    const bDate = new Date(b.date);
-    if (aDate < bDate) {
-      return 1;
-    }
-    if (aDate > bDate) {
-      return -1;
-    }
-    return 0;
-  });
+  return list
+    .filter((transaction) => {
+      const today = new Date();
+      const todayMinus90Days = new Date(
+        new Date().setDate(today.getDate() - 90)
+      );
+      const transactionDate = new Date(transaction.date);
+      return transactionDate >= todayMinus90Days;
+    })
+    .sort((a, b) => {
+      const aDate = new Date(a.date);
+      const bDate = new Date(b.date);
+      if (aDate < bDate) {
+        return 1;
+      }
+      if (aDate > bDate) {
+        return -1;
+      }
+      return 0;
+    });
 }
 export async function getTransactions() {
   return new Promise((resolve) =>
