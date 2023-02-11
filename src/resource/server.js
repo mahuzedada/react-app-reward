@@ -15,18 +15,17 @@ export async function getCustomerById(id) {
   );
 }
 function processTransactions(list) {
-  return list
-    .sort((a, b) => {
-      const aDate = new Date(a.date);
-      const bDate = new Date(b.date);
-      if (aDate < bDate) {
-        return 1;
-      }
-      if (aDate > bDate) {
-        return -1;
-      }
-      return 0;
-    });
+  return list.sort((a, b) => {
+    const aDate = new Date(a.date);
+    const bDate = new Date(b.date);
+    if (aDate < bDate) {
+      return 1;
+    }
+    if (aDate > bDate) {
+      return -1;
+    }
+    return 0;
+  });
 }
 export async function getTransactions() {
   return new Promise((resolve) =>

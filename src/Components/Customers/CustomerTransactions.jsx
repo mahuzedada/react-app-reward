@@ -41,7 +41,9 @@ export default function CustomerTransactions() {
         </div>
         <div>
           Total spent:{' '}
-          <span className="text-2xl">{transactions.reduce((a, b) => a + b.amount, 0)}</span>
+          <span className="text-2xl">
+            {transactions.reduce((a, b) => a + b.amount, 0)}
+          </span>
         </div>
         <div>
           Total rewards:{' '}
