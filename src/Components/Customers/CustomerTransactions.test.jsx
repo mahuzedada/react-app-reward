@@ -20,6 +20,7 @@ test('should render customer name, total rewards and the list of transactions', 
   TransactionController.getByCustomer = jest.fn().mockResolvedValue([
     { date: 'eiru93', amount: 110 },
     { date: 'nefv083', amount: 50 },
+    { date: 'dfibno', amount: 51 },
   ]);
 
   render(
@@ -30,7 +31,7 @@ test('should render customer name, total rewards and the list of transactions', 
 
   expect(await screen.findByText('Transactions for alibaba')).toBeVisible();
   expect(await screen.findByText('Total rewards:')).toBeVisible();
-  expect(await screen.findByText('70')).toBeVisible();
+  expect(await screen.findByText('71')).toBeVisible();
   expect(await screen.findByText('eiru93')).toBeVisible();
   expect(await screen.findByText('50')).toBeVisible();
   expect(CustomerController.getById).toHaveBeenCalledTimes(1);
