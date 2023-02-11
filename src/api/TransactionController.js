@@ -1,4 +1,4 @@
-import {getTransactionByCustomer, getTransactions} from "../../resource/server";
+import {getTransactionsByCustomer, getTransactions} from "../resource/server";
 export default class TransactionController {
   static async getAll() {
     try {
@@ -10,7 +10,7 @@ export default class TransactionController {
   }
   static async getByCustomer(id) {
     try {
-      const result = await getTransactionByCustomer(id);
+      const result = await getTransactionsByCustomer(id);
       return result.data;
     } catch (e) {
       return null;

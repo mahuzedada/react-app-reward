@@ -1,4 +1,4 @@
-import * as server from '../../resource/server';
+import * as server from '../resource/server';
 import TransactionController from "./TransactionController";
 
 describe('getAll', () => {
@@ -17,17 +17,17 @@ describe('getAll', () => {
 });
 describe('getByCustomer', () => {
   test('should handle success', async () => {
-    server.getTransactionByCustomer = jest.fn().mockResolvedValue({data: 123});
+    server.getTransactionsByCustomer = jest.fn().mockResolvedValue({data: 123});
     const transaction = await TransactionController.getByCustomer('id');
     expect(transaction).toEqual(123);
-    expect(server.getTransactionByCustomer).toHaveBeenCalledTimes(1);
-    expect(server.getTransactionByCustomer).toHaveBeenCalledWith('id');
+    expect(server.getTransactionsByCustomer).toHaveBeenCalledTimes(1);
+    expect(server.getTransactionsByCustomer).toHaveBeenCalledWith('id');
   });
   test('should handle failure', async () => {
-    server.getTransactionByCustomer = jest.fn().mockRejectedValue('anything');
+    server.getTransactionsByCustomer = jest.fn().mockRejectedValue('anything');
     const transaction = await TransactionController.getByCustomer('id');
     expect(transaction).toBeNull();
-    expect(server.getTransactionByCustomer).toHaveBeenCalledTimes(1);
-    expect(server.getTransactionByCustomer).toHaveBeenCalledWith('id');
+    expect(server.getTransactionsByCustomer).toHaveBeenCalledTimes(1);
+    expect(server.getTransactionsByCustomer).toHaveBeenCalledWith('id');
   });
 });
