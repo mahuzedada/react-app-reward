@@ -13,9 +13,14 @@ export default function Customers() {
     navigate(`/customers/${customerId}/transactions`);
   }
 
+  function goAllTransactions() {
+    navigate('/transactions');
+  }
+
   return (
     <>
       <h3>Customers</h3>
+      <button onClick={goAllTransactions}>View all transactions</button>
       <table>
         <thead>
           <tr>
