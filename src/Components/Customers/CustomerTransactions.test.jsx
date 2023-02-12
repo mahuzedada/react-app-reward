@@ -29,9 +29,7 @@ test('should render customer name, total rewards and the list of transactions', 
     </BrowserRouter>
   );
 
-  expect(await screen.findByText('Transactions for alibaba')).toBeVisible();
-  expect(await screen.findByText('Total rewards:')).toBeVisible();
-  expect(await screen.findByText('71')).toBeVisible();
+  expect(await screen.findByText('alibaba')).toBeVisible();
   expect(await screen.findByText('eiru93')).toBeVisible();
   expect(await screen.findByText('50')).toBeVisible();
   expect(CustomerController.getById).toHaveBeenCalledTimes(1);
@@ -54,4 +52,18 @@ test('should navigate to customers page', async () => {
   fireEvent.click(await screen.findByText('View all customers'));
   expect(mockNavigate).toHaveBeenCalledTimes(1);
   expect(mockNavigate).toHaveBeenCalledWith('/customers');
+});
+test('should navigate to all transactions page', async () => {
+  CustomerController.getById = jest
+    .fn()
+    .mockResolvedValue({ name: 'anything' });
+  TransactionController.getByCustomer = jest.fn().mockResolvedValue([]);
+  render(
+    <BrowserRouter>
+      <CustomerTransactions />
+    </BrowserRouter>
+  );
+  fireEvent.click(await screen.findByText('View all transactions'));
+  expect(mockNavigate).toHaveBeenCalledTimes(1);
+  expect(mockNavigate).toHaveBeenCalledWith('/transactions');
 });

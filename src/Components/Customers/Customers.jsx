@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CustomerController from '../../api/CustomerController';
+import Link from '../UiElements/Link';
 
 export default function Customers() {
   const navigate = useNavigate();
@@ -19,12 +20,7 @@ export default function Customers() {
 
   return (
     <>
-      <div
-        onClick={goAllTransactions}
-        className="cursor-pointer text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4"
-      >
-        View all transactions
-      </div>
+      <Link onClick={goAllTransactions}>View all transactions</Link>
       <div className="text-3xl font-bold mb-3">Customers</div>
       <div className="flex justify-center">
         <ul className="bg-white rounded-lg border border-gray-200 w-full text-gray-900">

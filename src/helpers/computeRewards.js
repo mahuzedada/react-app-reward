@@ -9,5 +9,7 @@ function computeSingleReward(transaction) {
   return 0;
 }
 export default function computeRewards(transactions) {
-  return transactions.reduce((a, b) => a + computeSingleReward(b), 0);
+  return transactions
+    .reduce((a, b) => a + computeSingleReward(b), 0)
+    .toFixed(2);
 }

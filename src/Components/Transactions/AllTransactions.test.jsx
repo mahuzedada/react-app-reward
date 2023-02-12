@@ -12,8 +12,8 @@ jest.mock('react-router-dom', () => {
 });
 test('should render a list of transactions', async () => {
   TransactionController.getAll = jest.fn().mockResolvedValue([
-    { date: 'date___1', amount: 'abc' },
-    { date: 'date___2', amount: 'xyz' },
+    { date: 'date___1', amount: 132 },
+    { date: 'date___2', amount: 90 },
   ]);
   render(
     <BrowserRouter>
@@ -22,8 +22,8 @@ test('should render a list of transactions', async () => {
   );
   expect(await screen.findByText('date___1')).toBeVisible();
   expect(await screen.findByText('date___2')).toBeVisible();
-  expect(await screen.findByText('abc')).toBeVisible();
-  expect(await screen.findByText('xyz')).toBeVisible();
+  expect(await screen.findByText('132')).toBeVisible();
+  expect(await screen.findByText('90')).toBeVisible();
   expect(TransactionController.getAll).toHaveBeenCalledTimes(1);
 });
 test('should navigate to customers page', async () => {
