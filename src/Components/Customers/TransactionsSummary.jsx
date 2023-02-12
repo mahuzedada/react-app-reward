@@ -11,9 +11,7 @@ export default function TransactionsSummary({ customer, transactions }) {
       <div className="flex items-center space-x-3">
         {rewardsPerMonth.map((month) => (
           <div key={Math.random()} className="">
-            <div className="font-bold text-gray-900">
-              {month.reward}
-            </div>
+            <div className="font-bold text-gray-900">{month.reward}</div>
             <div className="text-gray-400 text-sm">{month.label}</div>
           </div>
         ))}
