@@ -9,9 +9,12 @@ You can see a live preview of the app on https://rewards.mycodedemo.com/
   - `server.js` is mocked in the controller files but in the real world, `axios` or similar libraries would be mocked instead
   - all code under the `src` folder, besides the `resource` folder is 100% covered
 - Styling: I used [tailwindCss](https://tailwindcss.com/). for styling. [TailwindCss](https://tailwindcss.com/) is a highly customizable css library packed with classes like `flex` and `text-center` that can be composed to build any design, directly in the markup.
+- Code formatting: I used eslint and prettier to make the code consistent and readable
 - Data
-  - There are json files under the `resource` folder that contains a few transactions
+  - There are json files under the `resource` folder that contains a list transactions and customers
+  - There are a couple of ways to interpret `a three-month period`. For this implementation I assumed that `a three-month period` means `90 days`
   - The fake api is configured to return transactions that are 90 days or less from today's date
+  - The fake api also sorts the transactions by date
 
 # Javascript bug?
 
