@@ -10,6 +10,10 @@ function computeSingleReward(transaction) {
 }
 export default function computeRewards(transactions) {
   return transactions
-    .reduce((a, b) => a + computeSingleReward(b), 0)
+    .reduce(
+      (currentResult, currentTerm) =>
+        currentResult + computeSingleReward(currentTerm),
+      0
+    )
     .toFixed(2);
 }

@@ -6,24 +6,27 @@ import computeRewards from './computeRewards';
  */
 export default function computeRewardsPerMonth(transactions) {
   let currentMonth = null;
-  let index = -1;
-  const result = [];
-  transactions.forEach((transaction) => {
-    const transactionDate = new Date(transaction.date);
+
+  return transactions.reduce((currentResult, currentTerm) => {
+    const transactionDate = new Date(currentTerm.date);
     const transactionMonth = transactionDate.getMonth();
     const transactionYear = transactionDate.getFullYear();
+
     if (transactionMonth !== currentMonth) {
       currentMonth = transactionMonth;
-      index += 1;
-      result.push({
+      currentResult.push({
         label: `${MONTH_NAMES[transactionMonth]} ${transactionYear}`,
         list: [],
+        reward: '0.00',
       });
     }
-    result[index].list.push(transaction);
-  });
-  result.forEach((item) => {
-    item.reward = computeRewards(item.list);
-  });
-  return result;
+
+    const currentIndex = currentResult.length - 1;
+    currentResult[currentIndex].list.push(currentTerm);
+    currentResult[currentIndex].reward = (
+      Number(currentResult[currentIndex].reward) +
+      Number(computeRewards([currentTerm]))
+    ).toFixed(2);
+    return currentResult;
+  }, []);
 }
