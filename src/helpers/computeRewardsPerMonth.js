@@ -1,7 +1,9 @@
 import MONTH_NAMES from './MONTH_NAMES';
 import computeRewards from './computeRewards';
 
-// This function only works when transactions are sorted by date
+/*
+ This function only works when transactions are sorted by date
+ */
 export default function computeRewardsPerMonth(transactions) {
   let currentMonth = null;
   let index = -1;
